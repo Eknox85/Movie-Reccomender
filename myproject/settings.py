@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z32-rin4s&+7bu+7c0zywn*1hrj#8cud-+k+$5*g=)h7!95e-m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["Movie-Recommender.com"]
 
 
 # Application definition
