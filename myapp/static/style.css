@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff;
+}
+
+p {
+    font-size: 18px;
+}
+
+.container {
+            width: 1920px;
+            height: 600px;
+            background-color: white;
+            border: 2px black; /* RED BORDER TO SEE IT */
+            z-index: 10; /* Bring it to the front */
+            position: relative;
+            border-radius: 30px;
+        }

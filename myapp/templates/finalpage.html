@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button Hover Move</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('/static/background.jpg'); /* Fixed the missing quote */
+            background-size: cover;
+            background-position: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 3;
+            width: 150px;
+            height: 80px;
+            background-color: rgba(88,0,200,1.0);
+            color: white;
+            border-radius: 20px;
+
+        }
+
+        button:hover {
+            transform: translateY(-10px); /* Moves the button 100px to the right */
+        }
+
+
+
+        .heading {
+            position: fixed;
+            top: -15px; /* Sticks it 20px from the bottom */
+            right: 960px;
+            font-size: 50px;
+            color: rgba(255,255,255,0.85);
+            z-index: 10;
+        }
+        .taskbar {
+            position: fixed;
+            width: 1925px;
+            height: 90px;
+            top: 0px;
+            background-color: rgb(0,0,0, .7);
+            border-radius: 10px;
+            border-bottom:1px solid white;
+            box-shadow: 0px 4px 8px white;
+            z-index: 3;
+        }
+
+
+        .header2 {
+            position: fixed;
+            top: 230px;
+            right: 1075px;
+            font-size: 50px;
+            color: rgba(255,255,255,0.99);
+            z-index: 10;
+        }
+
+        .para {
+            position: fixed;
+            top: 300px;
+            right: 910px;
+            font-size: 30px;
+            color: rgba(255,255,255,1.0);
+            z-index: 10;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 3 columns */
+            gap: 50px;
+            max-width: 1000px;
+            position:fixed;
+            top: 400px;
+            left: 600px;
+
+        }
+        .button-container2 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 3 columns */
+            gap: 50px;
+            max-width: 1100px;
+            position:fixed;
+            top: 475px;
+            left: 600px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 3 columns */
+            gap: 50px;
+            max-width: 1100px;
+            position:fixed;
+            top: 515px;
+            left: 600px;
+        }
+        .para2 {
+
+            font-size: 30px;
+            color: white;
+            z-index: 10;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class = "taskbar">
+      <h1 class = "heading">Movie Picker!</h1>
+      <h2 class = "header2">Results</h2>
+        <p class = "para">Movie Recommendation!!</p>
+    </div>
+
+<div class="button-container">
+    <p class="para2">{{ results.0.title }}</p>  <!-- Movie Title -->
+    <img src="{{ results.0.poster }}" alt="{{ results.0.title }} poster" width="200">
+    <p class="para2">{{ results.0.year }}</p><!-- Genre -->
+</div>
+<div class="button-container2">
+    <p class="para2">{{ results.0.genre }}</p>     <!-- Mood -->
+    <p class="para2"></p>
+    <p class="para2">{{ results.0.des }}</p>  <!-- Setting -->
+     <!-- Rating -->
+</div>
+<div class = "container">
+     <p class="para2">Rating: {{ results.0.rating }}/5</p>
+</div>
+
+
+
+</body>
+</html>
