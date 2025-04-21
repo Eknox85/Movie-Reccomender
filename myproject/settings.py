@@ -73,16 +73,16 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
+    '''{'ENGINE': 'django.db.backends.mysql',
         'NAME': 'movies_db',
         'USER': 'root',
         'PASSWORD': 'MuStud2006.',
         'HOST': 'localhost',
-        'PORT': '3306',
-    }
+        'PORT': '3306'}'''
+    'default' : dj_database_url.config(default=os.environ.get('Database_Url'))
+
 }
 
 
