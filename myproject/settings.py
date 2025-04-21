@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-z32-rin4s&+7bu+7c0zywn*1hrj#8cud-+k+$5*g=)h7!95e-m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["movie-reccomender.onrender.com"]
+ALLOWED_HOSTS = ["movie-reccomender.onrender.com",
+                 "movie-reccomender.onrender.com/page1/",
+                 "movie-reccomender.onrender.com/page2/",
+                 "movie-reccomender.onrender.com/page3/",
+                 "movie-reccomender.onrender.com/page4/",
+                 "movie-reccomender.onrender.com/page5/",
+                 "movie-reccomender.onrender.com/finalpage/"
+                 ]
 
 
 # Application definition
@@ -47,6 +54,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
