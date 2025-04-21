@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z32-rin4s&+7bu+7c0zywn*1hrj#8cud-+k+$5*g=)h7!95e-m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["Movie-Recommender.com"]
+ALLOWED_HOSTS = ["movie-recommender.onredner.com"]
 
 
 # Application definition
