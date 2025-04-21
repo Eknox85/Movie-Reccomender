@@ -73,17 +73,31 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-import dj_database_url
-DATABASES = {
-    '''{'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movies_db',
-        'USER': 'root',
-        'PASSWORD': 'MuStud2006.',
-        'HOST': 'localhost',
-        'PORT': '3306'}'''
-    'default' : dj_database_url.config(default=os.environ.get('Database_Url'))
 
-}
+import re
+
+MYSQL_URL = os.environ.get("DATABASE_URL")
+
+if MYSQL_URL:
+    match = re.match(
+        r"mysql:\/\/(?P<user>[^:]+):(?P<password>[^@]+)@(?P<host>[^:]+):(?P<port>\d+)\/(?P<name>.+)",
+        MYSQL_URL
+    )
+    if match:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': match.group('name'),
+                'USER': match.group('user'),
+                'PASSWORD': match.group('password'),
+                'HOST': match.group('host'),
+                'PORT': match.group('port'),
+            }
+        }
+    else:
+        raise Exception("Invalid DATABASE_URL format")
+else:
+    raise Exception("DATABASE_URL not set in environment")
 
 
 # Password validation
