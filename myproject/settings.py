@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ["movie-reccomender.onrender.com",
                  "movie-reccomender.onrender.com/page3/",
                  "movie-reccomender.onrender.com/page4/",
                  "movie-reccomender.onrender.com/page5/",
-                 "movie-reccomender.onrender.com/finalpage/"
+                 "movie-reccomender.onrender.com/results/"
                  ]
 
 
