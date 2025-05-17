@@ -15,7 +15,7 @@ def page1(request):
 
 def page2(request):
     if request.method == "POST":
-        
+
         pacing = request.POST.get("pacing")
         print(f"Selected Answer: {pacing}")  # Debugging
         if pacing:
