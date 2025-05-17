@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["movie-reccomender.onrender.com",
                  "movie-reccomender.onrender.com/page1/",
-                 "movie-reccomender.onrender.com/page1/page2/",
+                 "movie-reccomender.onrender.com/page2/",
                  "movie-reccomender.onrender.com/page3/",
                  "movie-reccomender.onrender.com/page4/",
                  "movie-reccomender.onrender.com/page5/",

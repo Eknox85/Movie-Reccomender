@@ -7,9 +7,7 @@ def home(request):
 
 def page1(request):
     if request.method == "POST":
-        global genre
         genre = request.POST.get("genre")
-        print(f"Selected Answer: {genre}")  # Debugging
         if genre:
             request.session["genre"] = genre
             return redirect("page2")
@@ -17,7 +15,7 @@ def page1(request):
 
 def page2(request):
     if request.method == "POST":
-        global pacing
+        
         pacing = request.POST.get("pacing")
         print(f"Selected Answer: {pacing}")  # Debugging
         if pacing:
