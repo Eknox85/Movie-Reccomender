@@ -99,9 +99,10 @@
           <p class = "para">What genre are you in the mood for??</p>
 
 
-            <form method="post">
-                        {% csrf_token %}
-                <div class = "button-container">
+
+
+                <form class = "button-container" method="post">
+                    {% csrf_token %}
                         <button type="submit" name="genre" value="Action" class = "button"   >Action</button>
                         <button type="submit" name="genre" value="Animation" class = "button">Animation</button>
                         <button type="submit" name="genre" value="Comedy" class = "button"   >Comedy</button>
@@ -115,8 +116,7 @@
                         <button type="submit" name="genre" value="Superhero" class = "button">SuperHero</button>
                         <button type="submit" name="genre" value="Thriller" class = "button" >Thriller</button>
                         <button type="submit" name="genre" value="War" class = "button"      >War</button>
-                    </div>
-                </form>
+                    </form>
     </div>
 <p>You selected: {{ request.session.page1_answer }}</p>
 </body>

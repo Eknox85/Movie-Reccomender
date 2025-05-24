@@ -97,14 +97,15 @@
       <h1 class = "heading">Movie Picker!</h1>
       <h2 class = "header2">Pacing??</h2>
           <p class = "para">How do you prefer the pacing of your movie??</p>
-            <form method="post">
-                {% csrf_token %}
-                <div class = "button-container">
+
+
+                <form class = "button-container" method="post">
+                    {% csrf_token %}
                     <button type="submit" name="pacing" value="Slow-Burn" class = "button">Slow-burn</button>
                     <button type="submit" name="pacing" value="Medium-paced" class = "button">Medium-Paced</button>
                     <button type="submit" name="pacing" value="Fast-paced" class = "button">Fast-paced</button>
-                </div>
-            </form>
+                </form>
+
 
     </div>
 </body>
