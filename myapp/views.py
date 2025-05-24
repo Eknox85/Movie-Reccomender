@@ -5,13 +5,28 @@ import requests
 def home(request):
     return render(request, "index.html")
 
-def page1(request):
+'''def page1(request):
     if request.method == "POST":
         genre = request.POST.get("genre")
         if genre:
             request.session["genre"] = genre
             return redirect("page2")
+    return render(request, "page1.html")'''
+def page1(request):
+    if request.method == "POST":
+        print("POST received")
+        try:
+            genre = request.POST.get("genre")
+            print(f"Selected genre: {genre}")
+            if genre:
+                request.session["genre"] = genre
+                return redirect("page2")
+            else:
+                print("Genre not found in POST data")
+        except Exception as e:
+            print(f"Error in page1 view: {e}")
     return render(request, "page1.html")
+
 
 def page2(request):
     if request.method == "POST":
